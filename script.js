@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menuToggle.classList.toggle("open");
 
         if (menuToggle.classList.contains("open")) {
-            menuToggle.textContent = "✖"; // Unicode for X
+            menuToggle.textContent = "✖";
         } else {
             menuToggle.textContent = "☰";
         }
