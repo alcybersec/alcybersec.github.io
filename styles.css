@@ -74,8 +74,8 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 50px; /* Adjust based on your header height */
+        position: fixed;
+        top: 60px; /* Adjust based on your header height */
         left: 0;
         background-color: #161b22;
         z-index: 1000;
