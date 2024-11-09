@@ -27,13 +27,19 @@ body {
 
 /* Navigation Menu */
 .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .nav a {
-    color: #58a6ff;
+    color: white;
     text-decoration: none;
+    padding: 10px;
     font-weight: 500;
     margin: 0 15px;
     font-family: 'Orbitron', sans-serif;
@@ -43,6 +49,38 @@ body {
 
 .nav a:hover {
     color: #79c0ff;
+}
+
+.nav .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    .nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav .nav-links.active {
+        display: flex;
+    }
+
+    .nav .menu-toggle {
+        display: block;
+    }
+
+    .nav a {
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #444;
+    }
 }
 
 /* Header */

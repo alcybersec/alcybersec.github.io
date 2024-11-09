@@ -21,11 +21,14 @@
     <div class="container">
         <!-- Navigation -->
         <div class="nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact-info">Contact</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact-info">Contact</a>
+            </div>
         </div>
 
         <!-- Header -->
@@ -143,5 +146,12 @@
             <p>&copy; 2024 Shavyrin CSA. All rights reserved.</p>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
