@@ -77,12 +77,17 @@ body {
         position: fixed;
         top: 60px; /* Adjust based on your header height */
         left: 0;
-        background-color: #161b22;
+        background-color: rgba(22, 27, 34, 0.9); /* Semi-transparent background */
         z-index: 1000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
     }
 
     .nav .nav-links.active {
         display: flex;
+        max-height: 300px; /* Adjust based on the number of links */
+        transition: max-height 0.3s ease-in;
     }
 
     .nav .menu-toggle {
@@ -91,6 +96,10 @@ body {
         top: 20px;
         right: 20px;
         z-index: 1001;
+    }
+
+    .nav .menu-toggle.open {
+        content: '✖'; /* Unicode for X */
     }
 
     .nav a {
