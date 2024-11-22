@@ -1,135 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security Portfolio</title>
+<!DOCTYPE HTML>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<html>
+	<head>
+		<title>alcybersec</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css">
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">AlCyberSec</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<!--
+							<li>
+								<a href="#">Layouts</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="elements.html">Elements</a></li>
+							-->
+						</ul>
+					</nav>
+				</header>
 
-    <!-- External JavaScript -->
-    <script defer src="script.js"></script>
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Aleksandr Shavyrin</h2>
+							<p>A passionate cyber security professional, privacy advocate and a programmer</p>
+						</header>
+						<span class="image"><img src="images/logo.jpg" alt="" /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <div class="container">
-        <!-- Front Page Section -->
-        <section id="front-page">
-            <div class="front-page-image"></div>
-            <div class="front-page-text">
-                <p>I am a university student with passion in Cyber Security.</p>
-            </div>
-        </section>
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<header>
+										<h2>Cyber Security</h2>
+										<p>The thing I started early in my teens has now become my passion and profession.</p>
+									</header>
+								</div>
+								<div class="col-8 col-12-medium">
+									<p>Cyber Security is probably one of the most important and fast developing spheres
+										in computer science. It is a field that is constantly evolving and changing, adapting to new
+										threats and finding new ways to protect your information and freedom. 
+										I have been emerged in this field for several years now and I am constantly learning new things,
+										improving my self and my skills. I am always looking for new challenges to conquer. I have 
+										completed several courses in cyber security and I am currently working on my bachelor's degree.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
 
-        <!-- Navigation -->
-        <div class="nav">
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact-info">Contact</a>
-            </div>
-        </div>
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Privacy Enthusiast</h2>
+							<p>Privacy and security are not the same thing and it is important to have both.</p>
+						</header>
+						<p>Privacy is freedom from unauthorized intrusion. However nowadays it is becoming harder and harded
+							to keep your information truly yours. As a privacy advocate I am always trying to educate myself and
+							people around me about the importance of privacy and how to protect it. I write articles, give talks and
+							create privacy tools to help people protect their information. You can find some of my works by clicking the button below.
+						</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
 
-        <!-- Header -->
-        <h1>The Profile</h1>
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>My programmer side</h2>
+							<p></p>
+						</header>
+						<p>Since I first got my own computer I always found ways to adapt my virtual environment to my liking.
+							At first it was simply installing plugins and apps, but as I grew older I started to learn how to create
+							my own tools and programs. Now I have several years of programming behind my belt and I am always looking
+							to learn something new. 
+						</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p class="section-content">My name is Aleksandr, I am a university student with passion in Cyber Security.<br>
-                Currently studying in University of Wollongong in Dubai with expected GPA of 3.5, 
-                I have acquired knowledge in Python development, Linux administration, 
-                penetration testing and many more learnt through studies as well as additional courses and projects.<br> 
-                I am constantly improving and expanding my knowledge in the industry as it is my passion and hobby.</p>
-        </section>
+			<!-- Four -->
+				<section id="four" class="wrapper style1 special fade-up">
+					<div class="container">
+						<header class="major">
+							<h2>My Skills</h2>
+							<p>This is a brief summary of what I specialize in</p>
+						</header>
+						<div class="box alt">
+							<div class="row gtr-uniform">
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-virus"></span>
+									<h3>Penetration Testing</h3>
+									<p>I am a penetration tester with specialization in web pentesting.</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-solid fa-user-tie"></span>
+									<h3>Linux Administration</h3>
+									<p>I have completed several courses on linux administration. I also use GNU/Linux daily.</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-solid fa-terminal"></span>
+									<h3>Bash Scripting</h3>
+									<p>In my opinion it is a nessesary skill for every IT professional.</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-network-wired"></span>
+									<h3>Network Security</h3>
+									<p>My most favourite specialization in Cyber Security.</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-code"></span>
+									<h3>Python Developing and Scripting</h3>
+									<p>Need something done efficiently? Python is a necessity rather than an option. </p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="icon solid alt major fa-glasses"></span>
+									<h3>Vulnerability Assessment</h3>
+									<p>Understanding what and where is vulnerable is even more important than knowing how to fix it.</p>
+								</section>
+							</div>
+						</div>
+						<footer class="major">
+							<ul class="actions special">
+								<li><a href="#" class="button">Learn more about me</a></li>
+							</ul>
+						</footer>
+					</div>
+				</section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Education and Experience</h2>
-            <div class="experience-item">
-                <h3>Cyber Security Major - University of Wollongong in Dubai</h3>
-                <p>Bachelor in Computer Science and Cyber Security in the University of Wollongong in Dubai.</p>
-                <p><em>September 2023 - Present (expected to graduate in 2026)</em></p>
-            </div>
-            <div class="experience-item">
-                <h3>Game Mods Dev - Freelance</h3>
-                <p>Created and edited modifications for various GTA 5 and GTA:SA online game servers. Installed and edited modification packs.</p>
-                <p><em>2020 - July 2023</em></p>
-            </div>
-        </section>
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://github.com/alcybersec" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:alworkm@proton.me" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Core Skills</h2>
-            <div class="skills">
-                <div class="skill">Penetration Testing</div>
-                <div class="skill">Network Security</div>
-                <div class="skill">Linux Administration</div>
-                <div class="skill">Python Development and Scripting</div>
-                <div class="skill">Vulnerability Assessment</div>
-                <div class="skill">Web Development & Security</div>
-                <div class="skill">Bash Scripting</div>
-                <div class="skill">Digital Forensics</div>
-            </div>
-        </section>
+		</div>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <p>"Had a great experience with this person. He has great knowledge and helped us as a server to understand our needs and possibilities."</p>
-                <p><em>- Owner and Administrator, Majestic RP Server</em></p>
-            </div>
-            <div class="testimonial">
-                <p>"A great student with a strong grasp of math and technical concepts as well as a great array of soft skills."</p>
-                <p><em>- Professor, Moscow City University School</em></p>
-            </div>
-        </section>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-        <!-- Blog Section -->
-        <section id="blog">
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h3><a href="#">Understanding Zero-Day Exploits</a></h3>
-                <p>A comprehensive guide to identifying, preventing, and mitigating zero-day vulnerabilities in corporate environments.</p>
-            </div>
-            <div class="blog-post">
-                <h3><a href="#">Best Practices for Web Application Security</a></h3>
-                <p>Essential tips for developers and businesses to protect web applications from common security threats.</p>
-            </div>
-        </section>
-
-        <!-- Contact Information Section -->
-        <section id="contact-info">
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:alworkm@proton.me">alworkm@proton.me</a></p>
-                <p><strong>Phone:</strong> I am a Cyber Security Analyst. There is no phone here.</p>
-                <p><strong>LinkedIn:</strong> <a href="--" target="_blank">--</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/alcybersec" target="_blank">github.com/alcybersec</a></p>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2024 Shavyrin CSA. All rights reserved.</p>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
-</body>
+	</body>
 </html>
