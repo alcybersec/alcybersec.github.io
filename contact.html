@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Aleksandr Shavyrin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <style>
+        /* Page-specific styles */
+        .contact-header {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            background-color: var(--bg-secondary);
+        }
+        
+        .contact-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        .contact-form-container {
+            background-color: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-form-container h2 {
+            margin-bottom: var(--spacing-lg);
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-md);
+            background-color: var(--bg-tertiary);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius-sm);
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background-color: var(--accent-primary);
+            color: white;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--border-radius-full);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent-secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .submit-btn:disabled {
+            background-color: var(--bg-tertiary);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .form-status {
+            margin-top: var(--spacing-md);
+            display: none;
+        }
+        
+        .success-message {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #4caf50;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .error-message {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: #f44336;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .contact-info-content {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .contact-info h2 {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius-md);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 119, 255, 0.1);
+            color: var(--accent-primary);
+            border-radius: var(--border-radius-full);
+            font-size: 1.5rem;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .contact-details p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: var(--border-radius-full);
+            font-size: 1.5rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>CS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-header">
+            <h1>Get In <span class="accent">Touch</span></h1>
+            <p>Have a question, project idea, or just want to connect? Feel free to reach out using the contact form or through any of the provided channels. I'm always open to discussing cybersecurity, privacy, or potential collaborations.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-form-container">
+                <h2>Send Me a <span class="accent">Message</span></h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                    <div class="form-status"></div>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-info-content">
+                    <h2>Contact <span class="accent">Information</span></h2>
+                    <p>Feel free to reach out through any of the following methods. I typically respond within 24-48 hours.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>alworkm@proton.me</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <p>github.com/alcybersec</p>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p>linkedin.com/in/username</p>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                
+                <div class="social-section">
+                    <h3>Connect on Social Media</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/alcybersec" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <!--
+                        <a href="https://twitter.com/" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>CS</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form elements
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const formStatus = contactForm.querySelector('.form-status');
+                    
+                    // Disable submit button and show loading state
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    }
+                    
+                    // Simulate form submission (replace with actual form submission logic)
+                    setTimeout(() => {
+                        // Show success message
+                        if (formStatus) {
+                            formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Your message has been sent successfully! I\'ll get back to you soon.</div>';
+                            formStatus.style.display = 'block';
+                        }
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                        }
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            if (formStatus) {
+                                formStatus.style.display = 'none';
+                            }
+                        }, 5000);
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Aleksandr Shavyrin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div id="particles-js" class="particles-container"></div>
+    
+    <header>
+        <div class="logo">
+            <span>CS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Aleksandr</span>
+                </h1>
+                <div class="typewriter">
+                    <span id="typewriter-text"></span><span class="cursor"></span>
+                </div>
+                <p class="hero-description">
+                    2nd Year Cyber Security Student at University of Wollongong in Dubai, with experience in Python, C++, and Web Development.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn primary-btn">Get In Touch</a>
+                    <a href="cv.html" class="btn secondary-btn">View CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-preview">
+            <h2>Technical <span class="accent">Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Proficient with tools like Burp Suite, nmap, and Linux administration.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <p>Experienced in Python and C++ development for various applications.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and interactive web applications.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="skills.html" class="btn secondary-btn">View All Skills</a>
+            </div>
+        </section>
+
+        <section class="latest-articles">
+            <h2>Latest <span class="accent">Articles</span></h2>
+            <div class="articles-container">
+                <div class="article-card">
+                    <div class="article-image placeholder-image"></div>
+                    <div class="article-content">
+                        <div class="article-tag">Cybersecurity</div>
+                        <h3>Common Vulnerabilities in Web Applications</h3>
+                        <p>An overview of the most prevalent security issues in modern web applications...</p>
+                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-image placeholder-image"></div>
+                    <div class="article-content">
+                        <div class="article-tag">Privacy</div>
+                        <h3>Protecting Your Digital Footprint</h3>
+                        <p>Essential practices for maintaining privacy in an increasingly connected world...</p>
+                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="blog.html" class="btn secondary-btn">View All Articles</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>CS</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

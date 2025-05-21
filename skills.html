@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Aleksandr Shavyrin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <style>
+        /* Page-specific styles */
+        .skills-header {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            background-color: var(--bg-secondary);
+        }
+        
+        .skills-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+        
+        .skills-category {
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .skills-category:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+        
+        .skills-category h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .skill-card {
+            background-color: var(--bg-tertiary);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background-color: var(--accent-primary);
+            transition: height var(--transition-normal);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .skill-card:hover::before {
+            height: 100%;
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .skill-name h3 {
+            margin-bottom: 0;
+        }
+        
+        .skill-level {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background-color: var(--bg-primary);
+            border-radius: var(--border-radius-full);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            border-radius: var(--border-radius-full);
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .skill-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .projects-section {
+            padding: var(--spacing-xl) var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .project-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-color: var(--bg-tertiary);
+            position: relative;
+        }
+        
+        .project-content {
+            padding: var(--spacing-lg);
+            text-align: left;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-tag {
+            background-color: rgba(0, 119, 255, 0.1);
+            color: var(--accent-primary);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-full);
+            font-size: 0.8rem;
+        }
+        
+        .project-title {
+            margin-bottom: var(--spacing-sm);
+            transition: color var(--transition-fast);
+        }
+        
+        .project-card:hover .project-title {
+            color: var(--accent-primary);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+        
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>CS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="skills-header">
+            <h1>Technical <span class="accent">Skills</span></h1>
+            <p>As a 2nd Year Cyber Security Student at the University of Wollongong in Dubai, I've developed a diverse set of technical skills across various domains. Below is a comprehensive overview of my capabilities, from programming languages to security tools.</p>
+        </section>
+
+        <section class="skills-category">
+            <h2>Cybersecurity <span class="accent">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Penetration Testing</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p class="skill-description">Identifying vulnerabilities in systems and applications through systematic testing and exploitation techniques.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Network Security</h3>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75%"></div>
+                    </div>
+                    <p class="skill-description">Implementing secure network architectures, firewalls, and intrusion detection/prevention systems.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Security Analysis</h3>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                    <p class="skill-description">Analyzing security incidents, performing threat assessments, and implementing mitigation strategies.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Cryptography</h3>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="65%"></div>
+                    </div>
+                    <p class="skill-description">Understanding and implementing encryption algorithms, secure key management, and cryptographic protocols.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-category">
+            <h2>Programming <span class="accent">Languages</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Python</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                    <p class="skill-description">Extensive experience in Python for automation, data analysis, and security tool development.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-cuttlefish"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>C++</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p class="skill-description">Proficient in C++ for system-level programming, algorithm implementation, and performance-critical applications.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>JavaScript</h3>
+                        <span class="skill-level">Knowledgeable</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60%"></div>
+                    </div>
+                    <p class="skill-description">Creating interactive web applications and implementing client-side functionality.</p>
+                </div>1
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>SQL</h3>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                    <p class="skill-description">Database design, query optimization, and secure data management practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-category">
+            <h2>Tools & <span class="accent">Technologies</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Linux Administration</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p class="skill-description">System administration, shell scripting, and security hardening for Linux environments.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Networking</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p class="skill-description">Network configuration, troubleshooting, and security implementation including Nmap scanning techniques.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>MySQL</h3>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                    <p class="skill-description">Database design, query optimization, and secure data management practices using MySQL.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div class="skill-name">
+                        <h3>Git & Version Control</h3>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p class="skill-description">Collaborative development using Git, including branching strategies and secure workflow practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h2>Featured <span class="accent">Projects</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image placeholder-image"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Cybersecurity</span>
+                        </div>
+                        <h3 class="project-title">Network Vulnerability Scanner</h3>
+                        <p class="project-description">A comprehensive tool for identifying security vulnerabilities in network infrastructure, with automated reporting and remediation suggestions.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder-image"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Algorithms</span>
+                        </div>
+                        <h3 class="project-title">Secure File Encryption System</h3>
+                        <p class="project-description">A high-performance file encryption tool implementing modern cryptographic algorithms with a focus on usability and security.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder-image"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Security</span>
+                        </div>
+                        <h3 class="project-title">IoT Security Framework</h3>
+                        <p class="project-description">A comprehensive security framework for Internet of Things devices, focusing on secure communication and data protection.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>CS</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize skill progress bars
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill progress bars when they come into view
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight && rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width;
+                    }
+                });
+            }
+            
+            // Initial check
+            animateSkillBars();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateSkillBars);
+        });
+    </script>
+</body>
+</html>
