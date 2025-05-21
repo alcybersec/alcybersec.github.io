@@ -17,7 +17,7 @@ This is the source code for the [AlCyberSec personal website](https://alcybersec
 - Easy navigation between sections
 - Hosted for free using GitHub Pages
 
-## Project Structure
+## Website Structure
 ```
 webite-v2/
 ├── assets/
@@ -32,13 +32,6 @@ webite-v2/
 ├── skills.html            # Skills overview
 └── README.md              # This file
 ```
-
-## Deployment
-This website is automatically deployed using [GitHub Pages](https://pages.github.com/). To update the live site:
-
-1. Make your changes locally.
-2. Commit and push to the `main` branch of this repository.
-3. The site will be available at: https://alcybersec.github.io/
 
 ## Technologies Used
 - HTML5
