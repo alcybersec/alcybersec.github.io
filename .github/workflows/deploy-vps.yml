@@ -1,0 +1,29 @@
+name: Deploy to VPS
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, vps-static]
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rsync to /opt/website/site
+        run: |
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='*.md' \
+            ./ /opt/website/site/
+
+      - name: Smoke test local nginx
+        run: |
+          curl -fsS -o /dev/null -w "local=%{http_code}\n" http://127.0.0.1:8081/
