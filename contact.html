@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="js/partials.js" defer></script>
     <script src="js/main.js" defer></script>
     <style>
         /* Page-specific styles */
         .contact-header {
             text-align: center;
-            padding: var(--spacing-xl) var(--spacing-lg);
+            padding: calc(var(--spacing-xl) + 60px) var(--spacing-lg) var(--spacing-xl);
             background-color: var(--bg-secondary);
         }
         
@@ -59,7 +58,7 @@
             width: 100%;
             padding: var(--spacing-md);
             background-color: var(--bg-tertiary);
-            border: 2px solid transparent;
+            border: 1px solid var(--border);
             border-radius: var(--border-radius-sm);
             color: var(--text-primary);
             font-family: var(--font-primary);
@@ -69,7 +68,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
         }
         
         textarea.form-control {
@@ -82,9 +81,9 @@
             align-items: center;
             gap: var(--spacing-sm);
             background-color: var(--accent-primary);
-            color: white;
+            color: #06210f;
             padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--border-radius-full);
+            border-radius: var(--border-radius-sm);
             font-weight: 500;
             border: none;
             cursor: pointer;
@@ -176,7 +175,7 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background-color: rgba(0, 119, 255, 0.1);
+            background-color: rgba(74, 222, 128, 0.1);
             color: var(--accent-primary);
             border-radius: var(--border-radius-full);
             font-size: 1.5rem;
@@ -218,7 +217,7 @@
         
         .social-link:hover {
             background-color: var(--accent-primary);
-            color: white;
+            color: #06210f;
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
@@ -233,28 +232,21 @@
             }
         }
     </style>
+    <meta name="description" content="Get in touch with Aleksandr Shavyrin — cybersecurity, privacy, and collaboration.">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alcybersec.github.io/contact.html">
+    <meta property="og:title" content="Contact | Aleksandr Shavyrin">
+    <meta property="og:description" content="Get in touch with Aleksandr Shavyrin — cybersecurity, privacy, and collaboration.">
+    <meta property="og:image" content="https://alcybersec.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Aleksandr Shavyrin">
+    <meta name="twitter:description" content="Get in touch with Aleksandr Shavyrin — cybersecurity, privacy, and collaboration.">
+    <meta name="twitter:image" content="https://alcybersec.github.io/assets/og-image.png">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <span>CS</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <header data-partial="nav"></header>
 
     <main>
         <section class="contact-header">
@@ -314,17 +306,15 @@
                                 <p>github.com/alcybersec</p>
                             </div>
                         </div>
-                        <!--
                         <div class="contact-method">
                             <div class="contact-icon">
                                 <i class="fab fa-linkedin"></i>
                             </div>
                             <div class="contact-details">
                                 <h3>LinkedIn</h3>
-                                <p>linkedin.com/in/username</p>
+                                <p>linkedin.com/in/aleksandr-shavyrin</p>
                             </div>
                         </div>
-                        -->
                     </div>
                 </div>
                 
@@ -334,7 +324,7 @@
                         <a href="https://github.com/alcybersec" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/aleksandr-shavyrin/" target="_blank" rel="noopener noreferrer" class="social-link">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <!--
@@ -348,20 +338,7 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>CS</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <footer data-partial="footer"></footer>
 
     <script>
         // Form submission handling

@@ -7,52 +7,69 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="js/partials.js" defer></script>
     <script src="js/main.js" defer></script>
+    <meta name="description" content="Cyber security student building production-grade self-hosted systems — full-stack apps, AI integration, and security automation.">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alcybersec.github.io/">
+    <meta property="og:title" content="Aleksandr Shavyrin | Cyber Security & Self-Hosted Systems">
+    <meta property="og:description" content="Cyber security student building production-grade self-hosted systems — full-stack apps, AI integration, and security automation.">
+    <meta property="og:image" content="https://alcybersec.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aleksandr Shavyrin | Cyber Security & Self-Hosted Systems">
+    <meta name="twitter:description" content="Cyber security student building production-grade self-hosted systems — full-stack apps, AI integration, and security automation.">
+    <meta name="twitter:image" content="https://alcybersec.github.io/assets/og-image.png">
 </head>
 <body>
-    <div id="particles-js" class="particles-container"></div>
-    
-    <header>
-        <div class="logo">
-            <span>CS</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <header data-partial="nav"></header>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1 class="animate-text">
-                    <span class="greeting">Hello, I'm</span>
-                    <span class="name">Aleksandr</span>
-                </h1>
-                <div class="typewriter">
-                    <span id="typewriter-text"></span><span class="cursor"></span>
+            <div class="hero-grid">
+                <div class="hero-content animate-text">
+                    <div class="hero-kicker">Final Year · Cyber Security</div>
+                    <h1>
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name">Aleksandr Shavyrin</span>
+                    </h1>
+                    <p class="hero-description">
+                        Final Year Cyber Security student at the University of Wollongong in Dubai — building production-grade self-hosted systems spanning full-stack apps, AI integration, and security automation.
+                    </p>
+                    <div class="statusline">
+                        <span class="live-dot"></span> Available for opportunities <span class="sep">·</span> Dubai, UAE <span class="sep">·</span> UTC+4
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn primary-btn">get in touch</a>
+                        <a href="cv.html" class="btn secondary-btn">view cv</a>
+                    </div>
                 </div>
-                <p class="hero-description">
-                    2nd Year Cyber Security Student at University of Wollongong in Dubai, with experience in Python, C++, and Web Development.
-                </p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn primary-btn">Get In Touch</a>
-                    <a href="cv.html" class="btn secondary-btn">View CV</a>
+                <div class="hero-term">
+                    <div class="term-bar">
+                        <i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i>
+                        <span class="term-title">zsh — alcybersec — 80×24</span>
+                    </div>
+                    <div class="term-body">
+                        <div class="term-cmd"><b>$</b> whoami</div>
+                        <div class="term-out big">Aleksandr Shavyrin</div>
+                        <div class="term-cmd" style="margin-top:10px"><b>$</b> cat ./role.txt</div>
+                        <div class="term-out">Final Year Cyber Security Student</div>
+                        <div class="term-out dim">University of Wollongong in Dubai</div>
+                        <div class="term-cmd" style="margin-top:10px"><b>$</b> uptime --status</div>
+                        <div class="term-out grn">● available for opportunities</div>
+                        <div class="term-cmd" style="margin-top:10px"><b>$</b> <span class="term-cursor"></span></div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section style="padding:0 var(--spacing-lg)">
+            <div class="stat-strip">
+                <div class="stat-cell"><div class="v">22</div><div class="k">homelab hosts</div></div>
+                <div class="stat-cell"><div class="v">111</div><div class="k">api endpoints</div></div>
+                <div class="stat-cell"><div class="v">~1,200</div><div class="k">tests</div></div>
+                <div class="stat-cell"><div class="v">5</div><div class="k">n8n workflows</div></div>
             </div>
         </section>
 
@@ -64,21 +81,21 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Cybersecurity</h3>
-                    <p>Proficient with tools like Burp Suite, nmap, and Linux administration.</p>
+                    <p>Ethical hacking and network security, with hardening via CrowdSec &amp; Authelia and vulnerability scanning using Trivy, Burp Suite, and nmap on Linux.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Programming</h3>
-                    <p>Experienced in Python and C++ development for various applications.</p>
+                    <h3>Full-Stack Development</h3>
+                    <p>Python (FastAPI, Celery) and React/TypeScript front to back, backed by PostgreSQL, Redis, and REST APIs.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-server"></i>
                     </div>
-                    <h3>Web Development</h3>
-                    <p>Creating responsive and interactive web applications.</p>
+                    <h3>Infrastructure &amp; Self-Hosting</h3>
+                    <p>Docker, Ansible, and Proxmox with Prometheus/Grafana observability — infrastructure as code, end to end.</p>
                 </div>
             </div>
             <div class="section-cta">
@@ -93,18 +110,18 @@
                     <div class="article-image placeholder-image"></div>
                     <div class="article-content">
                         <div class="article-tag">Cybersecurity</div>
-                        <h3>Common Vulnerabilities in Web Applications</h3>
-                        <p>An overview of the most prevalent security issues in modern web applications...</p>
-                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3>Threat Modelling for Cybersecurity and Privacy Goals</h3>
+                        <p>A practical guide to understanding your personal risks before anything goes wrong — broken into simple steps anyone can follow.</p>
+                        <a href="assets/blog-pages/threat-modelling.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="article-card">
                     <div class="article-image placeholder-image"></div>
                     <div class="article-content">
                         <div class="article-tag">Privacy</div>
-                        <h3>Protecting Your Digital Footprint</h3>
-                        <p>Essential practices for maintaining privacy in an increasingly connected world...</p>
-                        <a href="blog.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3>The Importance of Encrypted Communication in Everyday Life</h3>
+                        <p>Why Signal, Matrix, and privacy-first messengers matter more than ever — for everyone, not just those with something to hide.</p>
+                        <a href="assets/blog-pages/encrypted-comms.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -114,19 +131,6 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>CS</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <footer data-partial="footer"></footer>
 </body>
 </html>

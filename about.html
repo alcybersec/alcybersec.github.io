@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="js/partials.js" defer></script>
     <script src="js/main.js" defer></script>
     <style>
         /* Page-specific styles */
@@ -17,7 +16,7 @@
             grid-template-columns: 1fr 1fr;
             gap: var(--spacing-xl);
             align-items: center;
-            padding: var(--spacing-xl) var(--spacing-lg);
+            padding: calc(var(--spacing-xl) + 60px) var(--spacing-lg) var(--spacing-xl);
         }
         
         .about-image {
@@ -196,28 +195,21 @@
             }
         }
     </style>
+    <meta name="description" content="Cyber security student, privacy advocate, and builder of self-hosted systems. Background, journey, and experience.">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alcybersec.github.io/about.html">
+    <meta property="og:title" content="About | Aleksandr Shavyrin">
+    <meta property="og:description" content="Cyber security student, privacy advocate, and builder of self-hosted systems. Background, journey, and experience.">
+    <meta property="og:image" content="https://alcybersec.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | Aleksandr Shavyrin">
+    <meta name="twitter:description" content="Cyber security student, privacy advocate, and builder of self-hosted systems. Background, journey, and experience.">
+    <meta name="twitter:image" content="https://alcybersec.github.io/assets/og-image.png">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <span>CS</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <header data-partial="nav"></header>
 
     <main>
         <section class="about-section">
@@ -229,7 +221,7 @@
             <div class="about-content">
                 <h2>About <span class="accent">Me</span></h2>
                 <div class="about-text">
-                    <p>Hello! I'm Aleksandr Shavyrin, a 20-year-old 2nd Year Cyber Security Student at the University of Wollongong in Dubai. I'm passionate about digital security, privacy advocacy, and developing secure applications.</p>
+                    <p>Hello! I'm Aleksandr Shavyrin, a 20-year-old Final Year Cyber Security Student at the University of Wollongong in Dubai. I'm passionate about digital security, privacy advocacy, and developing secure applications.</p>
                     <p>My journey in technology began with a curiosity about how systems work and how they can be protected. This led me to pursue a degree in Cyber Security, where I've been developing my skills in Python, C++, MySQL, Linux administration, networking, and IoT.</p>
                     <p>I believe in the importance of privacy in our increasingly connected world and strive to create solutions that respect user data while providing excellent functionality. I'm fluent in English and Russian, with some knowledge of German (A2 level).</p>
                 </div>
@@ -302,19 +294,6 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>CS</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <footer data-partial="footer"></footer>
 </body>
 </html>

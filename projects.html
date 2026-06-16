@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Aleksandr Shavyrin</title>
+    <meta name="description" content="Selected projects by Aleksandr Shavyrin — production-grade self-hosted systems, full-stack AI apps, and homelab security automation.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alcybersec.github.io/projects.html">
+    <meta property="og:title" content="Projects | Aleksandr Shavyrin">
+    <meta property="og:description" content="Production-grade self-hosted systems, full-stack AI apps, and homelab security automation.">
+    <meta property="og:image" content="https://alcybersec.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects | Aleksandr Shavyrin">
+    <meta name="twitter:description" content="Production-grade self-hosted systems, full-stack AI apps, and homelab security automation.">
+    <meta name="twitter:image" content="https://alcybersec.github.io/assets/og-image.png">
+
+    <script src="js/partials.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/projects.js" defer></script>
+</head>
+<body>
+    <header data-partial="nav"></header>
+
+    <main>
+        <section class="projects-header">
+            <h1>Selected <span class="accent">Projects</span></h1>
+            <p>A few systems I've designed, built, and run end-to-end — from AI-powered applications to the self-hosted infrastructure they live on.</p>
+        </section>
+
+        <section class="projects-section">
+            <p class="projects-intro">
+                The <a href="https://github.com/alcybersec/homelab-infrastructure" target="_blank" rel="noopener noreferrer">homelab</a>
+                runs the rest of this list — StudyAIO and the Transaction Intelligence app are deployed on it, and the
+                <a href="https://github.com/alcybersec/n8n-homelab-automation" target="_blank" rel="noopener noreferrer">n8n automation</a>
+                keeps it healthy.
+            </p>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Cards rendered from the static data array in js/projects.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer data-partial="footer"></footer>
+</body>
+</html>

@@ -4,105 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Security Practices | Aleksandr Shavyrin</title>
+    <meta name="description" content="Simple steps to protect yourself online — without becoming an expert.">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://alcybersec.github.io/assets/blog-pages/important-basic-security-practices.html">
+    <meta property="og:title" content="Basic Security Practices | Aleksandr Shavyrin">
+    <meta property="og:description" content="Simple steps to protect yourself online — without becoming an expert.">
+    <meta property="og:image" content="https://alcybersec.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Basic Security Practices | Aleksandr Shavyrin">
+    <meta name="twitter:description" content="Simple steps to protect yourself online — without becoming an expert.">
+    <meta name="twitter:image" content="https://alcybersec.github.io/assets/og-image.png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
+    <script src="../../js/partials.js" defer></script>
     <script src="../../js/main.js" defer></script>
-    <style>
-        .blog-post-header {
-            text-align: center;
-            padding: var(--spacing-xl) var(--spacing-lg);
-            background-color: var(--bg-secondary);
-        }
-        
-        .blog-post-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: var(--spacing-xl) var(--spacing-lg);
-        }
-        
-        .blog-post-content {
-            background-color: var(--bg-secondary);
-            border-radius: var(--border-radius-md);
-            padding: var(--spacing-xl);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .blog-post-content h3 {
-            margin-top: var(--spacing-xl);
-            margin-bottom: var(--spacing-md);
-            color: var(--accent-primary);
-        }
-        
-        .blog-post-content p {
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-        
-        .blog-post-meta {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        .blog-post-meta span {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-        }
-        
-        .blog-post-tag {
-            display: inline-block;
-            background-color: rgba(0, 119, 255, 0.1);
-            color: var(--accent-primary);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--border-radius-full);
-            font-size: 0.8rem;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .back-to-blog {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-xl);
-            color: var(--accent-primary);
-            font-weight: 500;
-            transition: all var(--transition-fast);
-        }
-        
-        .back-to-blog:hover {
-            transform: translateX(-5px);
-        }
-    </style>
 </head>
 <body>
-<header>
-    <div class="logo">
-        <span>CS</span>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../about.html">About</a></li>
-            <li><a href="../../skills.html">Skills</a></li>
-            <li><a href="../../cv.html">CV</a></li>
-            <li><a href="../../blog.html" class="active">Blog</a></li>
-            <li><a href="../../contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-</header>
+<header data-partial="nav"></header>
 <main>
     <section class="blog-post-header">
         <h1>Important Basic Security Practices <span class="accent">for Ordinary People</span></h1>
@@ -168,19 +89,6 @@
         </div>
     </div>
 </main>
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <span>CS</span>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <div class="footer-copyright">
-            <p>&copy; 2025 Aleksandr Shavyrin. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+<footer data-partial="footer"></footer>
 </body>
 </html>
